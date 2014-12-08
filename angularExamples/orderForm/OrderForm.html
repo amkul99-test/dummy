@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Order Form, AnigularJS</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="orderForm.css">
+<script src="orderForm.js"></script>
+</head>
+<body>
+	<!-- Declare a new AngularJS app and associate the controller -->
+	<form ng-app ng-controller="OrderFormController">
+
+		<h1>Services</h1>
+
+		<ul>
+			<!-- Loop through the services array, assign a click handler, and set or
+			remove the "active" css class if needed -->
+			<li ng-repeat="service in services" ng-click="toggleActive(service)"
+				ng-class="{active:service.active}">
+				<!-- Notice the use of the currency filter, it will format the price -->
+				{{service.name}} <span>{{service.price | currency}}</span>
+			</li>
+		</ul>
+
+		<div class="total">
+			<!-- Calculate the total price of all chosen services. Format it as currency. -->
+			Total: <span>{{total() | currency}}</span>
+		</div>
+
+	</form>
+</body>
+</html>

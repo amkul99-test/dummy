@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Instant Search, AnigularJS</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="instantSearch.css">
+<script src="instantSearch.js"></script>
+</head>
+<body>
+	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
+	<div ng-app="instantSearch" ng-controller="InstantSearchController">
+
+		<div class="bar">
+			<!-- Create a binding between the searchString model and the text field -->
+			<input type="text" ng-model="searchString"
+				placeholder="Enter your search terms" />
+		</div>
+
+		<ul>
+			<!-- Render a li element for every entry in the items array. Notice
+			 the custom search filter "searchFor". It takes the value of the
+			 searchString model as an argument.
+		 -->
+			<li ng-repeat="i in items | filter:searchString"><a
+				href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
+				<p>{{i.title}}</p></li>
+		</ul>
+	</div>
+</body>
+</html>

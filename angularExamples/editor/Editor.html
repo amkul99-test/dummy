@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Editor, AnigularJS</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="editor.css">
+	<script src="editor.js"></script>
+</head>
+<body>
+	<!-- When this element is clicked, hide the tooltip -->
+	<div id="main" ng-app ng-controller="InlineEditorController"
+		ng-click="hideTooltip()">
+
+		<!-- This is the tooltip. It is shown only when the showtooltip variable is truthful -->
+		<div class="tooltip" ng-click="$event.stopPropagation()"
+			ng-show="showtooltip">
+
+			<!-- ng-model binds the contents of the text field with the "value" model.
+		 Any changes to the text field will automatically update the value, and
+		 all other bindings on the page that depend on it.  -->
+			<input type="text" ng-model="value" />
+		</div>
+
+		<!-- Call a method defined in the InlineEditorController that toggles
+	 the showtooltip variable -->
+		<p ng-click="toggleTooltip($event)">{{value}}</p>
+
+	</div>
+</body>
+</html>
