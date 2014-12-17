@@ -1,0 +1,8 @@
+body { 
+  background-color: lightgray;
+  }
+
+gridster-item {
+  background-color: darkgray; 
+  list-style-type: none; 
+  }

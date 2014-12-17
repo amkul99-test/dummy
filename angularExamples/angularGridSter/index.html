@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="jquery.gridster.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@*" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular.js"></script>
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="gridster.js"></script>
+    <script src="ngGridster.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="app" ng-controller="MyController">
+    <gridster options="options">
+      <gridster-item ng-repeat="item in items">
+        {{ item }}
+      </gridster-item>
+    </gridster>
+  </body>
+
+</html>

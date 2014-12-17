@@ -1,0 +1,50 @@
+.gridster * {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	color: #444444;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-size: 16px;
+	margin: 30px 40px;
+}
+
+.controls {
+	margin-bottom: 20px;
+}
+
+.gridster ul {
+	background-color: #efefef;
+}
+
+.gridster li {
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 100%;
+	text-align: center;
+}
+
+.gridster {
+	margin: 0px auto;
+	opacity: 0.8;
+	transition: opacity 0.6s ease 0s;
+}
+
+.gridster .gs-w {
+	background: none repeat scroll 0% 0% #dddddd;
+	cursor: pointer;
+}
+
+.gridster .player {
+	background: none repeat scroll 0% 0% #bbbbbb;
+}
+
+.gridster .preview-holder {
+	background: none repeat scroll 0% 0% #ff0000 ! important;
+	border: medium none ! important;
+}

@@ -1,0 +1,22 @@
+body { 
+  background-color: lightgray;
+  }
+
+gridster-item {
+  background-color: darkgray; 
+  list-style-type: none; 
+}
+
+ul
+{
+    list-style: none;
+    height: 100px;
+    white-space: nowrap;
+}
+
+li
+{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="simpleRESTapp" ng-controller="customersController"> 
+
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
+
+</div>
+
+<script>
+angular.module('simpleRESTapp')
+.config(['$httpProvider', function($httpProvider) {
+$httpProvider.defaults.useXDomain = true;
+delete $httpProvider.defaults.headers.common['X-Requested-With'];
+}
+]) 
+
+function customersController($scope,$http) {
+	 $http.defaults.useXDomain = true;
+     delete $http.defaults.headers.common['X-Requested-With'];
+
+  $http.get("http://localhost:9000/api/payees")
+  .success(function(response) {$scope.names = response;});
+}
+</script>
+
+</body>
+</html>

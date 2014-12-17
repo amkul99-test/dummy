@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="css/style.css" />
+<script data-require="angular.js@*" data-semver="1.2.7"
+	src="http://code.angularjs.org/1.2.7/angular.js"></script>
+<script data-require="jquery@*" data-semver="2.0.3"
+	src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="js/gridster.js"></script>
+<script src="js/ngGridster.js"></script>
+<script src="js/script.js"></script>
+</head>
+
+<body ng-app="app">
+
+
+	<div ng-controller="MyController" style="min-height: 160px;">
+		<div class="row" style="min-height: 150px;">
+			<h1>Component Palette</h1>
+			Click to add to dashboard grid
+			<ul id="components">
+				<li ng-repeat="widget in widgets">
+
+					<div class="label" ng-click="addWidget(widget)">{{widget}}</div>
+				</li>
+			</ul>
+		</div>
+		<div style="background: green;">
+			<gridster options="options"> <gridster-item
+				ng-repeat="item in items"> {{ item }} </gridster-item> </gridster>
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>

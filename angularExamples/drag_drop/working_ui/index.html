@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Builder</title>
+<link
+	href="bower_components/bootstrap.css/css/bootstrap-responsive.min.css"
+	rel="stylesheet" type="text/css" />
+<link href="bower_components/bootstrap.css/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+[ng-drag] {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+[ng-drag] {
+	width: 100px;
+	height: 100px;
+	background: #006699;
+	color: white;
+	text-align: center;
+	padding-top: 40px;
+	display: inline-block;
+	margin: 0 10px;
+	cursor: move;
+}
+
+ul.draggable-objects:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.draggable-objects li {
+	float: left;
+	display: block;
+	width: 120px;
+	height: 100px;
+}
+
+[ng-drag].drag-over {
+	border: solid 1px blue;
+}
+
+[ng-drag].dragging {
+	opacity: 0.5;
+}
+
+[ng-drop] {
+	background: #CCFFFF;
+	text-align: center;
+	width: 900px;
+	height: 600px;
+	padding-top: 90px;
+	display: block;
+	margin: 20px auto;
+	position: relative;
+}
+
+[ng-drop].drag-enter {
+	border: solid 5px black;
+}
+
+[ng-drop] span.title {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 20px;
+	margin-left: -100px;
+	margin-top: -10px;
+}
+
+[ng-drop] div {
+	position: relative;
+	z-index: 2;
+}
+</style>
+<script src="bower_components/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/bootstrap.css/js/bootstrap.min.js"></script>
+<script
+	src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="bower_components/d3/d3.min.js"></script>
+<script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/ngDraggable.js"></script>
+<script src="js/new_blox.js"></script>
+ <script data-require="angular.js@*" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular.js"></script>
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+ 
+<script src="bower_components/a/gridster.js"></script>
+<script src="bower_components/a/ngGridster.js"></script>
+<link rel="stylesheet" href="css/jquery.gridster.css" />
+<link rel="stylesheet" href="css/style.css" />
+    
+</head>
+<body ng-app="BloxApp">
+
+	<div class="container" ng-controller="MainCtrl">
+		<div id="alertdiv"></div>
+
+		<div class="row">
+			<h1>Component Palette</h1>
+		</div>
+
+		<ul class="draggable-objects">
+			<li ng-repeat="obj in draggableObjects">
+				<div ng-drag="true" ng-drag-data="obj">{{obj.name}}</div>
+			</li>
+		</ul>
+
+		<hr />
+
+		<div id="canvas" ng-drop="true"
+			ng-drop-success="onDropComplete($data,$event)">
+			<span class="title">Drop components here</span>
+
+		</div>
+
+		<!--
+      <div ng-drop="true" ng-drop-success="onDropComplete2($data,$event)">
+          <span class="title">Drop area #2</span>
+
+          <div ng-repeat="obj in droppedObjects2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+              {{obj.name}}
+          </div>
+
+      </div>
+      -->
+		
+	    <gridster options="options">
+	      <gridster-item ng-repeat="item in items">
+	        {{ item }}
+	      </gridster-item>
+	    </gridster>
+	 
+	 	<div class="row">
+			<button ng-click="onItem()">Add Item</button>
+		</div>
+		
+		<div class="row">
+			<button ng-click="onSave()">Save Config</button>
+		</div>
+
+		<hr>
+	</div>
+	<footer style="margin-top: 2000px;">footer</footer>
+</body>
+</html>

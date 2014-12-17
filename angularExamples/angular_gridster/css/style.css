@@ -1,0 +1,36 @@
+body {
+	background-color: none;
+}
+
+gridster-item {
+	background-color: darkgray;
+	list-style-type: none;
+	position: absolute;
+}
+
+.nolist {
+	list-style-type: none;
+}
+
+#components ul {
+	list-style: none;
+	height: 100px;
+	white-space: nowrap;
+}
+
+#components li {
+	display: inline-block;
+	min-height: 100px;
+	min-width: 100px;
+	margin: 20px;
+}
+
+.label
+{
+	min-height:100px;
+	min-width:100px;
+	background: blue;
+	color: white;
+	font-weight: bold;
+	vertical-align: middle;
+}

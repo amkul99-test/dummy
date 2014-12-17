@@ -1,0 +1,861 @@
+meta.foundation-mq-small {
+  font-family: "/only screen and (max-width: 40em)/";
+  width: 0em; }
+
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:40.063em)/";
+  width: 40.063em; }
+
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:64.063em)/";
+  width: 64.063em; }
+
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:90.063em)/";
+  width: 90.063em; }
+
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:120.063em)/";
+  width: 120.063em; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  font-size: 100%; }
+
+body {
+  background: white;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default; }
+
+a:hover {
+  cursor: pointer; }
+
+img, object, embed {
+  max-width: 100%;
+  height: auto; }
+
+object, embed {
+  height: 100%; }
+
+img {
+  -ms-interpolation-mode: bicubic; }
+
+#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
+  max-width: none !important; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-justify {
+  text-align: justify !important; }
+
+.hide {
+  display: none; }
+
+.start {
+  float: left !important; }
+
+.end {
+  float: right !important; }
+
+.text-start {
+  text-align: left !important; }
+
+.text-end {
+  text-align: right !important; }
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+img {
+  display: inline-block;
+  vertical-align: middle; }
+
+textarea {
+  height: auto;
+  min-height: 50px; }
+
+select {
+  width: 100%; }
+
+input[type="radio"] + label {
+  background-position: left center !important; }
+
+.columns, .column {
+  float: left !important; }
+
+.form-btn-action.is-invalid {
+  opacity: 0.6; }
+
+.form-row-padding-fix {
+  padding-bottom: 30px; }
+
+.accdet-account-type-wrapper {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #cccccc; }
+
+.accdet-account-type-label {
+  display: block;
+  float: left;
+  padding: 20px;
+  line-height: 30px;
+  background-image: url("../resource/images/dropdown_arrow.png");
+  background-repeat: no-repeat;
+  background-position: center right; }
+  .accdet-account-type-label .accdet-account-type {
+    font-weight: bold; }
+    .accdet-account-type-label .accdet-account-type span {
+      font-weight: normal; }
+
+.accdet-account-type-close-btn {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  background-image: url("../resource/images/close.png");
+  width: 23px;
+  height: 23px;
+  cursor: pointer; }
+
+.accdet-info-wrapper {
+  margin: 20px; }
+
+.accdet-left-graph {
+  float: left;
+  width: calc(100% - 230px);
+  height: 220px;
+  background-color: #eaeaea;
+  background: url(../resource/images/graph.png) no-repeat center; }
+
+.dashboard-wrp .pay-form-btn-wrpr {
+  margin-left: 301px !important; }
+
+.accdet-right-balances {
+  float: right;
+  width: 215px;
+  margin-left: 10px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  padding: 20px 20px 0 20px; }
+
+.accdet-balances-heading {
+  line-height: 14px;
+  padding-bottom: 16px; }
+
+.accdet-balance-value {
+  font-size: 12px;
+  padding-bottom: 10px;
+  position: relative; }
+
+.accdet-balance-available-value {
+  position: absolute;
+  right: 0px;
+  font-size: 14px; }
+
+.accdet-balances-alert {
+  background-color: #fddcdc;
+  width: 100%;
+  background-image: url("../resource/images/info.png");
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  margin-top: 3px;
+  margin-bottom: 18px;
+  padding: 10px 10px 10px 40px;
+  color: #ee3b3b; }
+
+.accdet-alert-content {
+  font-size: 11px;
+  display: block;
+  line-height: 14px; }
+
+.leftborder {
+  border-left: 1px solid #cccccc; }
+
+/* Account Details */
+.accdet-wrpr {
+  margin: 20px; }
+
+.accdet-tab-list {
+  position: relative;
+  top: 1px;
+  z-index: 2; }
+  .accdet-tab-list li {
+    float: left;
+    width: 16%;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 50px;
+    background: #164676;
+    font-size: 14px;
+    color: white;
+    border-left: 1px solid white; }
+  .accdet-tab-list .active {
+    background: white;
+    color: black;
+    border-top: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2; }
+
+.accdet-subhdg {
+  font-size: 22px;
+  float: left;
+  line-height: 46px; }
+
+.accdet-print-icon, .accdet-download-drp-icon, .accdet-search-icon, .accdet-download-icon {
+  box-sizing: content-box; }
+
+.accdet-download-drp-icon {
+  background: url('../resource/images/download.png') center no-repeat;
+  width: 232px;
+  height: 46px; }
+
+.accdet-download-icon {
+  float: right;
+  background: url('../resource/images/download_icon.png') center no-repeat;
+  width: 18px;
+  height: 46px;
+  padding-right: 50px;
+  cursor: pointer; }
+
+.accdet-print-icon {
+  float: right;
+  background: url('../resource/images/print.png') center no-repeat;
+  width: 18px;
+  height: 46px;
+  padding-right: 5px;
+  cursor: pointer; }
+
+.accdet-search-icon {
+  float: right;
+  background: url('../resource/images/search.png') center no-repeat;
+  width: 17px;
+  height: 46px;
+  cursor: pointer; }
+
+.accdet-lst-wrpr {
+  padding: 15px 20px;
+  border: 1px solid #e2e2e2; }
+
+.accdet-lst-wrpr table {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #666666;
+  width: calc(100% - 210px); }
+  .accdet-lst-wrpr table td {
+    line-height: 37px; }
+.accdet-lst-wrpr thead tr {
+  background-color: #f3f4f6;
+  color: black;
+  border-top: 1px solid #dbdbde;
+  border-bottom: 1px solid #dbdbde; }
+.accdet-lst-wrpr table tr:nth-child(even) {
+  background-color: #fbfcfe;
+  color: black;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec; }
+.accdet-lst-wrpr table th {
+  line-height: 37px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px; }
+
+.accdet-hdg-wrpr {
+  width: 100%;
+  height: 46px; }
+
+.accdet-date-col {
+  width: 23%;
+  padding-left: 4%;
+  text-align: left; }
+
+.accdet-desc-col {
+  width: 28%;
+  text-align: left; }
+
+.accdet-amt-col {
+  width: 20%;
+  padding-right: 4%;
+  text-align: right; }
+  .accdet-amt-col .accdet-credit-icon {
+    background: url('../resource/images/icon_plus.png') 2px 0px no-repeat;
+    display: inline-block;
+    height: 15px;
+    width: 16px;
+    margin-left: 5px;
+    vertical-align: middle; }
+  .accdet-amt-col .accdet-debit-icon {
+    background: url('../resource/images/icon_minus.png') 2px 0px no-repeat;
+    display: inline-block;
+    height: 15px;
+    width: 16px;
+    margin-left: 5px;
+    vertical-align: middle; }
+
+.accdet-bal-col {
+  width: 25%;
+  padding-right: 5%;
+  text-align: right; }
+
+.accdet-loadmore {
+  width: calc(100% - 210px);
+  text-align: center;
+  padding-top: 15px;
+  font-size: 12px; }
+  .accdet-loadmore a {
+    color: #154478; }
+
+.accdet-promotion-wrpr {
+  width: 210px;
+  float: right;
+  padding-top: 55px; }
+
+.accdet-promotion {
+  width: 215px;
+  float: left;
+  height: 300px;
+  background: url('../resource/images/promotion.png') 16px 10px no-repeat; }
+
+/*  Fund Transfer CSS */
+.pay-form-wrpr {
+  width: 938px;
+  margin: 0 auto; }
+
+.pay-form-tab-list {
+  position: relative;
+  top: 1px; }
+  .pay-form-tab-list li {
+    float: left;
+    width: 148px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 50px;
+    background: #164676;
+    font-size: 14px;
+    color: white;
+    border-left: 1px solid white; }
+  .pay-form-tab-list .active {
+    background: white;
+    color: black;
+    border-top: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2; }
+
+.pay-form-subhdg {
+  font-size: 22px;
+  float: left;
+  line-height: 46px; }
+
+.pay-form-lst-wrpr {
+  padding: 15px 20px;
+  border: 1px solid #e2e2e2; }
+
+.pay-form-wrpr {
+  width: 76%;
+  float: left; }
+
+.pay-form {
+  padding-top: 20px; }
+  .pay-form li .pay-form-label {
+    font-size: 12px;
+    display: inline-block;
+    width: 24%;
+    line-height: 34px;
+    float: left; }
+
+.pay-info-box {
+  height: 32px;
+  width: 248px;
+  border: 1px solid #cdd4dd;
+  padding-left: 10px; }
+
+.pay-avail-bal-wrpr {
+  font-size: 12px;
+  float: right;
+  padding: 3px 0 0 20px;
+  line-height: 14px; }
+
+.pay-add-payee {
+  font-size: 12px;
+  display: block;
+  color: #164676; }
+
+.pay-avail-bal-wrpr .pay-avail-bal-txt {
+  display: block; }
+
+.pay-form-btn-wrpr {
+  margin: 10px 0 0 239px;
+  font-size: 14px;
+  float: left; }
+  .pay-form-btn-wrpr input {
+    padding: 10px 30px;
+    margin: 0;
+    color: white;
+    border: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    float: right; }
+  .pay-form-btn-wrpr a {
+    padding: 0 20px 0 0;
+    text-decoration: none;
+    color: #7a7a7a;
+    float: left;
+    line-height: 40px; }
+
+.pay-to-label {
+  float: left; }
+
+.pay-payee-drpdown-wrpr {
+  float: left;
+  position: relative; }
+
+.pay-payee-drpdown {
+  position: absolute;
+  background-color: white;
+  z-index: 10; }
+
+.pay-payee-drpdown-box {
+  height: 32px;
+  width: 248px;
+  border: 1px solid #cdd4dd;
+  font-size: 12px;
+  padding: 10px 0 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: url('images/dropdown_arrow.png') right 10px center no-repeat; }
+
+.pay-payee-drpdown {
+  width: 100%; }
+  .pay-payee-drpdown li {
+    padding: 10px;
+    border: 1px solid #cdd4dd;
+    border-top: none; }
+    .pay-payee-drpdown li:hover {
+      background: #f2685a;
+      color: white; }
+      .pay-payee-drpdown li:hover .pay-prof-name, .pay-payee-drpdown li:hover .pay-prof-bank {
+        color: white; }
+
+.pay-prof-img {
+  float: left; }
+
+.pay-prof-desc {
+  float: left;
+  padding-left: 10px;
+  font-size: 12px; }
+
+.pay-prof-name {
+  color: black;
+  font-weight: bold;
+  line-height: 16px; }
+
+.pay-prof-bank {
+  color: #aaaaaa;
+  line-height: 16px; }
+
+.pay-prof-selected {
+  padding: 10px;
+  border: 1px solid #cdd4dd;
+  width: 226px; }
+
+.pay-prof-img-selected {
+  float: left; }
+
+.pay-prof-selected-name, .pay-prof-selected-bank {
+  color: #aaaaaa;
+  padding-top: 7px; }
+
+.pay-past-trnsfr-desc-wrpr {
+  float: left;
+  width: 206px;
+  text-transform: uppercase; }
+
+.pay-past-trnsfr-hdg-img {
+  float: left;
+  padding-left: 10px; }
+
+.pay-past-trnsfr-hdg-wrpr {
+  padding-left: 20px;
+  font-size: 14px;
+  text-transform: none;
+  float: left;
+  line-height: 18px;
+  margin-top: -3px; }
+
+.pay-past-trnsfr-hdg-name {
+  font-size: 14px;
+  font-weight: bold; }
+
+.pay-past-trnsfr-list-wrpr {
+  border-left: 1px solid #cccccc;
+  margin: 25px 0 0 15px; }
+
+.pay-past-transfer-date-wrpr {
+  margin: 10px 0 0 0;
+  line-height: 14px; }
+
+.pay-past-trnsfr-list-wrpr .pay-past-trnsfr-list {
+  position: relative;
+  margin-left: -16px;
+  top: -13px; }
+  .pay-past-trnsfr-list-wrpr .pay-past-trnsfr-list:after {
+    content: "";
+    background: white;
+    position: absolute;
+    bottom: -13px;
+    left: 15px;
+    height: 20px;
+    width: 1px; }
+
+.pay-past-transfer-dtl-wrpr {
+  padding-top: 10px; }
+
+.pay-past-transfer-date-img {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 7px;
+  border: 2px solid #f2685a;
+  margin: 0 9px 0 10px;
+  background-color: white; }
+
+.pay-past-transfer-prev-img {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  margin: 18px 10px 0 9px;
+  background-color: #bebec1;
+  float: left; }
+
+.pay-past-transfer-date-txt {
+  font-size: 12px;
+  color: #f2685a; }
+
+.pay-past-trnsfr-dtls-box {
+  position: relative;
+  background: white;
+  border: 1px solid #dde0e5;
+  box-sizing: content-box;
+  height: 38px;
+  width: 140px;
+  font-size: 12px;
+  padding: 10px 20px 0 10px;
+  float: left;
+  left: 5px; }
+  .pay-past-trnsfr-dtls-box:after, .pay-past-trnsfr-dtls-box:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; }
+  .pay-past-trnsfr-dtls-box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: white;
+    border-width: 5px;
+    margin-top: -5px; }
+  .pay-past-trnsfr-dtls-box:before {
+    border-color: rgba(221, 224, 229, 0);
+    border-right-color: #dde0e5;
+    border-width: 6px;
+    margin-top: -6px; }
+  .pay-past-trnsfr-dtls-box .pay-past-trnsfr-name {
+    line-height: 14px; }
+
+.pay-past-trnsfr-img {
+  float: left;
+  padding-top: 10px; }
+
+/* Styles for confirmation page */
+.payconf-higled-txt {
+  color: black;
+  font-weight: 500; }
+
+.payconf-c-main-box {
+  padding: 10px 0 0px 0;
+  text-align: center; }
+
+.payconf-c-main-text {
+  font-size: 22px;
+  padding-top: 10px; }
+
+.pay-payee-det-hdg {
+  display: inline-block;
+  font-weight: 600;
+  padding-right: 3px; }
+
+.pay-payee-det-wrpr {
+  font-size: 12px;
+  float: right;
+  line-height: 14px; }
+
+.payconf-c-main-stext {
+  font-size: 14px;
+  padding: 20px 0px;
+  width: 438px;
+  margin: 20px auto;
+  background: #f8f8f8;
+  border: 1px solid #eae6e7; }
+
+.rechargebx-c-main-img {
+  width: 65px;
+  height: 65px;
+  margin: auto; }
+
+.payconf-c-hdr {
+  border-bottom-width: 1px;
+  border-bottom-style: solid; }
+
+.rechargebx-c-receipt {
+  max-width: 300px;
+  width: 90%;
+  margin: 0 auto; }
+  .rechargebx-c-receipt .form-row {
+    padding: 0;
+    background-repeat: repeat no-repeat;
+    background-position: left 17px; }
+  .rechargebx-c-receipt .form-label, .rechargebx-c-receipt .form-field {
+    display: inline-block;
+    width: auto;
+    font-size: 12px;
+    line-height: 30px;
+    white-space: nowrap;
+    float: left;
+    background-color: white; }
+  .rechargebx-c-receipt .form-label {
+    padding-right: 5px; }
+  .rechargebx-c-receipt .form-field {
+    padding-left: 5px;
+    float: right; }
+    .rechargebx-c-receipt .form-field input[type="radio"] {
+      margin: 3px 5px 5px 0; }
+  .rechargebx-c-receipt .payconf-tofield {
+    width: 101px; }
+    .rechargebx-c-receipt .payconf-tofield .payconf-tobranch {
+      display: block;
+      padding-top: 15px; }
+
+.form-field input[type="radio"] {
+  margin: 3px 5px 5px 0; }
+
+.payconf-c-receipt-text {
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center; }
+
+.payconf-c-btn-group {
+  text-align: center;
+  padding-top: 20px; }
+  .payconf-c-btn-group .form-btn {
+    border: 1px solid #f2685b;
+    color: #f2685b;
+    background: white;
+    letter-spacing: 0;
+    padding: 0 20px;
+    width: auto; }
+  .payconf-c-btn-group .payconf-c-btn-print {
+    border: 1px solid #bbc2cc;
+    color: #bbc2cc; }
+
+/* New Theme Classes */
+.theme-sidebar-bdrcolor {
+  border-color: #cccccc; }
+
+.accdet-scroller {
+  position: relative;
+  height: 540px;
+  overflow: hidden;
+  width: 100%; }
+  .accdet-scroller > div {
+    position: absolute;
+    width: 100%;
+    background: white;
+    -webkit-transition: 400ms ease-in-out all;
+    -moz-transition: 400ms ease-in-out all;
+    -ms-transition: 400ms ease-in-out all;
+    -o-transition: 400ms ease-in-out all;
+    transition: 400ms ease-in-out all; }
+
+.accdet-input-close {
+  background-size: 10px 10px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  left: 221px;
+  top: 12px; }
+
+.payconf-page-content-wrpr {
+  overflow: hidden;
+  height: 100%;
+  height: 100%; }
+  .payconf-page-content-wrpr .payconf-page-content {
+    position: relative;
+    -webkit-transition: left 300ms ease-in-out;
+    -moz-transition: left 300ms ease-in-out;
+    -ms-transition: left 300ms ease-in-out;
+    -o-transition: left 300ms ease-in-out;
+    transition: left 300ms ease-in-out;
+    height: 100%; }
+    .payconf-page-content-wrpr .payconf-page-content .payconf-entry {
+      float: left;
+      position: absolute;
+      left: 0;
+      height: 100%; }
+    .payconf-page-content-wrpr .payconf-page-content .payconf-confirmation {
+      float: right; }
+
+@media only screen and (min-width:40.063em) {
+  .pay-payee-det-wrpr {
+    padding: 0 0 0 20px; } }
+
+@media only screen and (max-width: 40em) {
+  .pay-payee-drpdown-wrpr {
+    float: none; }
+  .payconf .form-input {
+    width: 100%; }
+  .payconf-c-main-stext {
+    margin-top: 15px; }
+  .payconf-c-btn-group .payconf-c-btn-print {
+    display: none; }
+  .accdet-scroller {
+    height: 709px !important; }
+  .pay-form-btn-wrpr {
+    margin: 10px 0 0 0 !important;
+    float: left !important; }
+    .pay-form-btn-wrpr a {
+      padding: 0 0 0 20px;
+      float: none; }
+    .pay-form-btn-wrpr input {
+      float: none; }
+  .pay-payee-drpdown {
+    width: 232px; }
+  .pay-avail-bal-wrpr {
+    float: left;
+    padding: 10px 0 0 0; }
+  .pay-form .form-field .bx-selectbx {
+    display: block; }
+  .form-label {
+    display: block; }
+  .pay-payee-det-wrpr {
+    margin-top: 10px;
+    float: none;
+    padding: 0; } }
+
+@media only screen and (max-width: 64em) {
+  .pay-form-wrpr {
+    width: 100%;
+    float: none; }
+  .accdet-input-close {
+    left: 201px;
+    top: 13px; }
+  .accdet-scroller {
+    height: 480px; }
+  .accdet-account-type-close-btn {
+    right: 10px; }
+  .payconf-c-main-stext {
+    margin-top: 15px; }
+  .accdet-lst-wrpr table {
+    width: 100%; }
+  .accdet-tab-list li {
+    width: 50%; }
+  .accdet-subhdg {
+    font-size: 18px; }
+  .accdet-lst-wrpr {
+    padding: 10px; }
+  .pay-form .form-field .bx-selectbx, .pay-form .form-input, .form-textarea {
+    width: 232px; }
+  .payconf-c-main-stext {
+    width: auto; }
+  .payconf-c-btn-group {
+    text-align: right; }
+  .accdet-balances-available span {
+    font-size: 14px; }
+  .accdet-balances-available .accdet-balance-available-value {
+    font-size: 16px; }
+  .accdet-alert-content-wrapper, .accdet-balances-alert {
+    width: auto; }
+  .pay-form {
+    padding-top: 0; }
+  .accdet-wrpr {
+    margin: 10px; }
+  .accdet-loadmore {
+    width: auto; }
+  .accdet-account-type-label {
+    padding: 20px 20px 20px 10px; }
+  .accdet-balances-alert {
+    background-position: 5px 7px; }
+  .pay-form-btn-wrpr {
+    margin: 10px 0 0 219px; } }
+
+.fd .accdet-account-type-label {
+  background: none;
+  font-weight: 600;
+  text-transform: uppercase; }
+.fd .pay-form-lst-wrpr, .fd .accdet-lst-wrpr {
+  padding: 0 !important;
+  border: 0 !important; }
+.fd .accdet-scroller {
+  height: 510px; }
+
+@media only screen and (max-width: 40em) {
+  .fd .accdet-scroller {
+    height: 680px !important; }
+  .fd .pay-form-lst-wrpr {
+    padding-top: 15px !important; } }
+
+@media only screen and (max-width: 64em) {
+  .fd .accdet-scroller {
+    height: 460px; }
+  .fd .pay-form-lst-wrpr {
+    padding-top: 30px !important; } }
+
+.sidelinks {
+  float: right;
+  width: 206px;
+  margin-top: 30px; }
+  .sidelinks .links-wrpr {
+    text-transform: capitalize;
+    font-size: 14px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    margin-bottom: 20px; }
+
+.bx-selectbx {
+  width: 252px; }
