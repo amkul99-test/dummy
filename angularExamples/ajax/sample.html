@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Editor, AnigularJS</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script>
+    myapp = angular.module("myapp", []);
+    myapp.directive('userinfo', function() {
+        var directive = {};
+
+        directive.restrict = 'E'; /* restrict this directive to elements */
+
+        directive.compile = function(element, attributes) {
+            element.css("border", "1px solid #cccccc");
+
+            var linkFunction = function($scope, element, attributes) {
+                element.html("This is the new content: " + $scope.firstName);
+                element.css("background-color", "#ffff00");
+            }
+
+            return linkFunction;
+        }
+
+        return directive;
+    });
+    
+   myapp.directive('mytransclude', function() {
+        var directive = {};
+
+        directive.restrict = 'E'; /* restrict this directive to elements */
+        directive.transclude = true;
+        directive.template = "<div class='myTransclude' ng-transclude></div>";
+        
+        return directive;
+    });
+    
+    myapp.controller("MyController", function($scope, $http) {
+        $scope.cssClass = "notificationDiv";
+
+        $scope.firstName = "Jakob";
+
+        $scope.doClick = function() {
+            console.log("doClick() called");
+        }
+    });
+</script>    
+</head>
+
+<body ng-app="myapp">
+<div ng-controller="MyController" >
+    <userinfo >This will be replaced</userinfo>
+    <mytransclude>This is a transcluded directive {{firstName}}</mytransclude>
+</div>
+
+</body>
+</html>

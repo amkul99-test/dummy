@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Editor, AnigularJS</title>
+<script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="ngAutocomplete.js"></script>
+<script src="angular-dropdowns.js"></script>
+<link rel="stylesheet" href="angular-dropdowns.css" />
+<script>
+	myapp = angular.module("myapp", [ 'ngDropdowns','ngAutocomplete' ]);
+
+	myapp.directive('autoComplete', function($timeout) {
+		return function(scope, iElement, iAttrs) {
+			iElement.autocomplete({
+				source : scope[iAttrs.uiItems],
+				select : function() {
+					$timeout(function() {
+						iElement.trigger('input');
+					}, 0);
+				}
+			});
+		};
+	});
+
+	myapp.controller("MyController", function($scope, $http) {
+
+		$scope.payees = [ "john", "bill", "charlie", "robert", "alban", "oscar",
+				"marie", "celine", "brad", "drew", "rebecca", "michel",
+				"francis", "jean", "paul", "pierre", "nicolas", "alfred",
+				"gerard", "louis", "albert", "edouard", "benoit", "guillaume",
+				"nicolas", "joseph" ];
+
+		 $scope.result1 = '';
+		    $scope.options1 = null;
+		    $scope.details1 = '';
+		    
+		$scope.accounts = [ 
+		{
+			text : 'SB Account',
+			value : 'SB',
+			iconCls : 'someicon',
+			Bal : '12,345.00 INR'
+		},  
+		{
+			text : 'Ready Credit Account',
+			value : 'RCB',
+			iconCls : 'someicon',
+			Bal : '36,345.00 INR'
+		}, 
+		{
+			text : 'Current Account',
+			value : 'CA',
+			iconCls : 'someicon',
+			Bal : '65,345.00 INR'
+		}, 
+		{
+			divider : true
+		}, 
+		{
+			text : 'Option4',
+			href : 'http://www.google.com'
+		} ];
+
+		$scope.transferFrom = {
+			text : "Choose Account"
+		};
+	});
+</script>
+</head>
+
+<body ng-app="myapp">
+	<div ng-controller="MyController">
+		<h1>Select Account</h1>
+		<p>You have selected: {{transferFrom}}</p>
+		<div dropdown-select="accounts" dropdown-model=transferFrom></div>
+		<hr/>
+		<input type="text" id="payee" ng-model="transferTo" ng-autocomplete options="payees"/>
+		selected = {{transferTo}}
+		
+		 <input type="text" id="Autocomplete" class="form-control" ng-autocomplete="result1" details="payees" options="payees"/>
+    	<div>result: {{result1}}</div>
+    
+		<!--  input auto-complete ui-items="payees" ng-model="transferTo"/-->
+
+	</div>
+
+</body>
+</html>

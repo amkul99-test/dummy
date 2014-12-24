@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Editor, AnigularJS</title>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script>
+    myapp = angular.module("myapp", []);
+    myapp.directive('notepad', function(notesFactory) {
+    	  return {
+    	    restrict: 'AE',
+    	    scope: {},
+    	    link: function(scope, elem, attrs) {
+    	    },
+    	    templateUrl: 'templateurl.html'
+    	  };
+    	});
+    scope.restore = function() {
+    	  scope.editMode = false;
+    	  scope.index = -1;
+    	  scope.noteText = '';
+    	};
+</script>    
+</head>
+
+<body ng-app="myapp">
+<div ng-controller="MyController" >
+    <userinfo >This will be replaced</userinfo>
+    <mytransclude>This is a transcluded directive {{firstName}}</mytransclude>
+</div>
+
+</body>
+</html>
