@@ -1,0 +1,19 @@
+<div>
+   <h1>Fund Transfer Basic</h1>
+			<div>Account</div>
+			<select ng-model="transferFrom"
+				ng-options="account.text group by account.type for account in accounts">
+				<option value="">Choose Account</option>
+			</select>
+			<div>{{transferFrom.Bal}}</div>
+			<br />
+			<div>Choose Payee</div>
+			<select ng-model="transferTo"
+				ng-options="payee for payee in payees">
+				<option value="">Choose Account</option>
+			</select>
+			<div>{{transferTo}}</div>
+			<div>Transfer Money</div>
+			<input ng-model="amount"> <br />
+    <a href="#page2">Transfer</a>
+</div>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Autocomplete, AnigularJS</title>
+<script src="http://code.jquery.com/jquery-1.7.1.js"
+	type="text/javascript"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"
+	type="text/javascript"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.js"></script>
+<link
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css"
+	type="text/css" rel="stylesheet">
+<style type="text/css">
+/* slideLeft */
+.slideLeft {
+	transition-timing-function: ease;
+	transition-duration: 250ms;
+}
+
+.slideLeft.ng-enter {
+	transition-property: none;
+	transform: translate3d(100%, 0, 0);
+}
+
+.slideLeft.ng-enter.ng-enter-active {
+	transition-property: all;
+	transform: translate3d(0, 0, 0);
+}
+
+.slideLeft.ng-leave {
+	transition-property: all;
+	transform: translate3d(0, 0, 0);
+}
+
+.slideLeft.ng-leave.ng-leave-active {
+	transition-property: all;
+	transform: translate3d(-100%, 0, 0);
+}
+</style>
+<script>
+
+	var myapp = angular.module("FundTransferBasic", [
+	                                 "ngRoute",
+	                                 "ngAnimate"
+	                             ]);
+	myapp.controller('FTBasicCtrl', function($scope) {
+
+		$scope.facilities = [{name: 'item 1', id: 0}, {name: 'item 2', id: 1}];
+		
+		$scope.payees = [ "john", "bill", "charlie", "robert", "alban",
+				"oscar", "marie", "celine", "brad", "drew", "rebecca",
+				"michel", "francis", "jean", "paul", "pierre", "nicolas",
+				"alfred", "gerard", "louis", "albert", "edouard", "benoit",
+				"guillaume", "nicolas", "joseph" ];
+
+		$scope.accounts = [ {
+			text : 'SB Account',
+			value : 'SB',
+			iconCls : 'someicon',
+			Bal : '12,345.00 INR'
+		}, {
+			text : 'Ready Credit Account',
+			value : 'RCB',
+			iconCls : 'someicon',
+			Bal : '36,345.00 INR'
+		}, {
+			text : 'Current Account',
+			value : 'CA',
+			iconCls : 'someicon',
+			Bal : '65,345.00 INR'
+		}, {
+			divider : true
+		}, {
+			text : 'Option4',
+			href : 'http://www.google.com'
+		} ];
+		
+		$scope.transferFrom = {
+				text : "Choose Account"
+			};
+	});
+
+	myapp.directive('autoComplete', function($timeout) {
+		return function(scope, iElement, iAttrs) {
+			iElement.autocomplete({
+				source : scope[iAttrs.uiItems],
+				select : function() {
+					$timeout(function() {
+						iElement.trigger('input');
+					}, 0);
+				}
+			});
+		};
+	});
+	
+	
+</script>
+</head>
+
+<body>
+	<div ng-app='FundTransferBasic'>
+		<div ng-controller='FTBasicCtrl'>
+			<h1>Fund Transfer Basic</h1>
+			<div>Account</div>
+			<select ng-model="transferFrom"
+				ng-options="account.text group by account.type for account in accounts">
+				<option value="">Choose Account</option>
+			</select>
+			<div>{{transferFrom.Bal}}</div>
+			<br />
+			<div>Choose Payee</div>
+			<input auto-complete ui-items="payees" ng-model="payee"> <br />
+			<div>Transfer Money</div>
+			<input ng-model="amount"> <br />
+			<br /> <a href="#" ng-click="go('/page2', 'slideLeft')">Submit</a>
+		</div>
+	</div>
+
+
+</body>
+</html>
